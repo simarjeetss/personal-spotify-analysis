@@ -8,7 +8,7 @@ body {
     line-height: 1.6;
     background-color: #121212; 
     color: #fff; 
-    transition: background-color 0.5s ease, color 0.5s ease; /* Add transition */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 header {
@@ -23,6 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -44,7 +45,7 @@ header {
 header h1 {
     font-family: 'Anton', Arial, sans-serif;
     font-size: 2rem; 
-    margin: 0;
+    margin: 0.5rem 0;
 }
 
 header p {
@@ -63,11 +64,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0.5rem 1rem; /* Adjust margin for better spacing */
+    margin: 0.5rem 1rem;
 }
 
 nav ul li a {
@@ -87,7 +88,7 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     opacity: 0;
-    transition: opacity 1s ease-in-out, background-color 0.5s ease, color 0.5s ease; /* Add transition */
+    transition: opacity 1s ease-in-out, background-color 0.5s ease, color 0.5s ease;
 }
 
 .fade-in {
@@ -109,7 +110,6 @@ section {
 .plot {
     max-width: 100%;
     height: auto;
-    /* display: none; Hide all images initially */
 }
 
 .carousel-btn {
@@ -172,7 +172,6 @@ footer {
     bottom: 0;
 }
 
-/* Add these styles */
 .theme-toggle {
     position: fixed;
     bottom: 20px;
@@ -236,7 +235,15 @@ body.light-theme pre {
 }
 
 body.light-theme code {
-    color: #000;
+    color: #4caf50;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Media Queries for Responsiveness */
