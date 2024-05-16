@@ -9,14 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.jpeg">
-
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="header.webp" alt="Logo" class="logo">
+            <!-- <img src="header.webp" alt="Logo" class="logo"> -->
             <h1>Exploring and Visualizing Personal Music Trends with Spotify</h1>
-            <img src="wsulogo.png" alt="University Logo" class="university-logo">
+            <!-- <img src="wsulogo.png" alt="University Logo" class="university-logo"> -->
         </div>
         <p>By Simarjeet Singh</p>
     </header>
@@ -39,8 +38,7 @@
             <p>Spotify allows researchers to request access to specific datasets or subsets of data for research purposes. This method is beneficial when researchers require access to specialized or comprehensive datasets that may not be readily available through other means.</p>
             <p><strong>Process:</strong> Researchers typically need to provide detailed information about their research objectives, the specific data they require, and how they intend to use it. Spotify evaluates each request on a case-by-case basis and may grant access based on factors such as the researcher’s credentials, the relevance of the research, and data availability.</p>
             <p><strong>Timeframe:</strong> Once approved, Spotify typically provides access to the requested data within a specified timeframe, which can vary depending on factors such as the volume and complexity of the data.</p>
-            <img src="data_request.png" alt="Request Data from Spotify">
-
+            <img src="data_request.png" alt="Request Data from Spotify" class="responsive-img">
 
             <h3>Real-time Access Using Spotify Web API</h3>
             <p>The Spotify Web API is a powerful tool that allows developers and researchers to programmatically access a wide range of data and functionality from the Spotify platform.</p>
@@ -55,14 +53,14 @@
                 <li>Search Endpoints: Perform searches across the Spotify catalog for tracks, albums, artists, playlists, and other entities.</li>
             </ul>
             <p><strong>Usage:</strong> This method allows for dynamic retrieval of up-to-date data, which can be used for real-time analysis and visualization.</p>
-            <img src="realtime.png" alt="realtime access from Spotify web api">
+            <img src="realtime.png" alt="Real-time Access from Spotify Web API" class="responsive-img">
 
             <h3>Playlist URI Access</h3>
             <p>Spotify assigns a unique Uniform Resource Identifier (URI) to each playlist on its platform. This URI serves as a direct link to the playlist and can be used to programmatically access playlist data.</p>
             <p><strong>Process:</strong> The Playlist URI can be accessed by navigating to the desired playlist within the Spotify application or web interface. Once the playlist is open, the URI can be obtained through the options menu by selecting "Share" or "Copy link to playlist."</p>
             <p><strong>Usage:</strong> Once the Playlist URI is obtained, it can be used to retrieve detailed information about the tracks included in the playlist via the Spotify API by passing the URI as a parameter. This method provides a straightforward and efficient way to retrieve detailed information about the tracks in specific Spotify playlists.</p>
             <p>Below is the code snippet:</p>
-            <img src="uri.png" alt="playlist_uris">
+            <img src="uri.png" alt="Playlist URIs" class="responsive-img">
             <pre>
                 <code class="language-r">
     # GET SPECIFIC PLAYLIST FEATURES
@@ -140,32 +138,24 @@
 
         <section id="exploratory-data-analysis">
             <h2>Exploratory Data Analysis</h2>
-            <p>We computed three key centrality measures for the network constructed from the user’s
-                Spotify streaming history:</p>
+            <p>We computed three key centrality measures for the network constructed from the user’s Spotify streaming history:</p>
 
             <h3>Degree Centrality</h3>
-            <p>The artists with the highest degree centrality can be inter-
-                preted as the <strong>favorites</strong> or <strong>go-to</strong> selections for the user. They may also serve as <strong>gateway</strong> artists, introducing the user to new music through related recommen-
-                dations.</p>
+            <p>The artists with the highest degree centrality can be interpreted as the <strong>favorites</strong> or <strong>go-to</strong> selections for the user. They may also serve as <strong>gateway</strong> artists, introducing the user to new music through related recommendations.</p>
 
             <h3>Betweenness Centrality</h3>
-            <p>The notable artists in this metric may be considered
-                the eclectic connectors within the user’s music tastes. They may not be the most
-                frequently played, but they play a critical role in diversifying the user’s listening
-                experience.</p>
+            <p>The notable artists in this metric may be considered the eclectic connectors within the user’s music tastes. They may not be the most frequently played, but they play a critical role in diversifying the user’s listening experience.</p>
 
             <h3>Closeness Centrality</h3>
-            <p>The overall closeness of the network suggests a cohe-
-                sive listening pattern, where the user exhibits a propensity to keep their musical
-                choices within a reachable scope of familiarity.</p>
+            <p>The overall closeness of the network suggests a cohesive listening pattern, where the user exhibits a propensity to keep their musical choices within a reachable scope of familiarity.</p>
 
-                Below you can see the plots:
+            <p>Below you can see the plots:</p>
             <div class="plot-carousel">
                 <button class="carousel-btn prev-btn" onclick="showPrevPlot()">&#10094;</button>
                 <div class="plot-container">
-                    <img src="./plots/centrality_measures.png" alt="Plot 3" class="plot" >
-                    <img src="./plots/basedondegree.png" alt="Plot 1" class="plot">
-                    <img src="./plots/graph.png" alt="Plot 5" class="plot">
+                    <img src="./plots/centrality_measures.png" alt="Centrality Measures" class="plot">
+                    <img src="./plots/basedondegree.png" alt="Based on Degree" class="plot">
+                    <img src="./plots/graph.png" alt="Graph" class="plot">
                 </div>
                 <button class="carousel-btn next-btn" onclick="showNextPlot()">&#10095;</button>
             </div>
@@ -175,121 +165,41 @@
             <h2>Advanced Analytical Techniques</h2>
             <div class="algorithm">
                 <h3>Community Detection</h3>
-                    <p>Community detection in networks is a crucial analytical approach used to identify clus-
-                    ters or groups of nodes that are more densely connected amongst themselves than with
-                    the rest of the network. A directed graph is constructed where each node represents an
-                    artist from your listening history, and the transitions based on the listening sequence are
-                    the directed edges. This means if you listen to one artist and then another, a directed
-                    edge connects the first artist to the second. This graph captures the transition of listening
-                    sessions, creating a network that reflects your musical journey.</p>
-                    <p>Below is the plot:</p>
-                    <img src="./plots/community_detection.png" alt="Community Detection Plot">
-                    <p>
-                        On this directed graph, the Cluster Walktrap algorithm is applied. The algorithm works in the following steps:
-                    </p>
-                      <ul>
-                        <li>
-                          <strong>Random Walks:</strong> Short random walks are started at all nodes. The "walk" is essentially a path that randomly moves from one artist to another based on the edges connecting them.
-                        </li>
-                        <li>
-                          <strong>Community Structure:</strong> The Walktrap algorithm assumes that walks are more likely to stay within the same community. This is because there are typically more dense connections within a group of similar artists, reflecting a listener’s preference for certain types of music.
-                        </li>
-                        <li>
-                          <strong>Distance Calculation:</strong> The algorithm calculates distances between nodes based on the frequency with which random walks starting at one node end at another. If many walks between two nodes are observed, it implies a close connection, likely within the same community.
-                        </li>
-                        <li>
-                          <strong>Agglomerative Hierarchical Clustering:</strong> It then uses these distances to perform agglomerative hierarchical clustering, starting with each node as its own community and merging nodes step-by-step into larger communities. This merging process continues until it maximizes the modularity of the graph—a measure that quantifies the strength of the division of a network into communities.
-                        </li>
-                      </ul>
-                    <p>In this project, this method helped identify distinct communities within the Spotify
-                        streaming data, highlighting how certain groups of artists are more likely to be listened
-                        to together, thereby uncovering patterns that might not be apparent through a simple
-                        playlist or genre analysis.</p>
-                    <p>Below is another visualization displaying the community detection for the top 20
-                        nodes. This selection is based on degree centrality, aimed at reducing the number of
-                        nodes for better clarity.
-                        The output from the community detection process is visualized as a network plot
-                        where nodes are colored based on the community to which they belong. This visual
-                        representation provides an immediate sense of the artist clusters within the listener’s
-                        Spotify experience.</p>
-                        <img src="./plots/CD_top20.png" alt="">
-                      
+                <p>Community detection in networks is a crucial analytical approach used to identify clusters or groups of nodes that are more densely connected amongst themselves than with the rest of the network. A directed graph is constructed where each node represents an artist from your listening history, and the transitions based on the listening sequence are the directed edges. This means if you listen to one artist and then another, a directed edge connects the first artist to the second. This graph captures the transition of listening sessions, creating a network that reflects your musical journey.</p>
+                <p>Below is the plot:</p>
+                <img src="./plots/community_detection.png" alt="Community Detection Plot" class="responsive-img">
+                <p>On this directed graph, the Cluster Walktrap algorithm is applied. The algorithm works in the following steps:</p>
+                <ul>
+                    <li><strong>Random Walks:</strong> Short random walks are started at all nodes. The "walk" is essentially a path that randomly moves from one artist to another based on the edges connecting them.</li>
+                    <li><strong>Community Structure:</strong> The Walktrap algorithm assumes that walks are more likely to stay within the same community. This is because there are typically more dense connections within a group of similar artists, reflecting a listener’s preference for certain types of music.</li>
+                    <li><strong>Distance Calculation:</strong> The algorithm calculates distances between nodes based on the frequency with which random walks starting at one node end at another. If many walks between two nodes are observed, it implies a close connection, likely within the same community.</li>
+                    <li><strong>Agglomerative Hierarchical Clustering:</strong> It then uses these distances to perform agglomerative hierarchical clustering, starting with each node as its own community and merging nodes step-by-step into larger communities. This merging process continues until it maximizes the modularity of the graph—a measure that quantifies the strength of the division of a network into communities.</li>
+                </ul>
+                <p>In this project, this method helped identify distinct communities within the Spotify streaming data, highlighting how certain groups of artists are more likely to be listened to together, thereby uncovering patterns that might not be apparent through a simple playlist or genre analysis.</p>
+                <p>Below is another visualization displaying the community detection for the top 20 nodes. This selection is based on degree centrality, aimed at reducing the number of nodes for better clarity. The output from the community detection process is visualized as a network plot where nodes are colored based on the community to which they belong. This visual representation provides an immediate sense of the artist clusters within the listener’s Spotify experience.</p>
+                <img src="./plots/CD_top20.png" alt="Community Detection Top 20" class="responsive-img">
             </div>
             <div class="algorithm">
                 <h3>Temporal Analysis</h3>
-                <p>Temporal analysis aims to uncover patterns in the timing and duration of music lis-
-                    tening sessions. By analyzing the timestamps associated with each song play, we can
-                    discern various trends, such as peak listening times, variations in music genre prefer-
-                    ences throughout the day, and how listening behavior changes at different hours of the
-                    day.</p>
-                <p>The endTime field in the Spotify streaming data, which records the timestamp for
-                    when a listening session ends, serves as the primary data point for temporal analysis.
-                    The first step involves converting these timestamp strings into a more manageable date-
-                    time format (POSIXct), which facilitates easier manipulation and analysis within R.
-                    Following the time conversion, an aggregation of total listening minutes per hour
-                    was executed, employing the dplyr package to group and summarize the data. This aggregation allowed us to construct a dataset representing the cumulative minutes of Spotify usage over each hour, consolidating listening sessions across the entire dataset.</p>
-                    <p>The aggregated data was visualized using ggplot2, generating a line graph that de- picts the listening patterns across the 24 hours of a day. The X-axis designates the hour
-                        of the day, while the Y-axis quantifies the total listening minutes. The resultant plot
-                        reveals the ebb and flow of music consumption, providing a clear visual representation
-                        of peak and off-peak listening periods.</p>
-
-                <p>The visual output from the temporal analysis presents a compelling narrative of
-                    daily music engagement. The line graph indicates a pronounced peak in listening ac-
-                    tivity during the evening hours, suggestive of a predilection for engaging with music
-                    towards the end of the day. Conversely, a noticeable decline in activity is observed
-                    during the late-night to early-morning hours, indicative of minimal engagement with
-                    Spotify during typical sleeping times.</p>
-
-                    <p>This plot illustrates the user's music listening behavior over a 24-hour period. Peaks in listening activity can be observed during specific times of the day, indicating preferred listening times.</p>
-                    <img src="./plots/litstening_patterns.png" alt="Temporal Analysis Plot">
-
-                <p><strong>Insight: </strong> Midday shows moderate listening levels, with some fluctuations that may corre-
-                    spond to lunch breaks or midday leisure activities. Morning hours display a sharp in-
-                    crease, possibly aligning with morning routines or commutes to work or school.</p>
-
-                <p>The analysis of temporal patterns provides an intimate glimpse into the user’s lifestyle
-                    and daily routine as it relates to music consumption. The evening peak suggests that the
-                    user may utilize music as a form of relaxation and unwinding after the day’s activities.
-                    The implications for streaming services like Spotify are manifold; understanding these
-                    patterns can inform the curation of time-specific playlists and the timing of new music
-                    releases to maximize engagement.</p>        
-
-                
-                
+                <p>Temporal analysis aims to uncover patterns in the timing and duration of music listening sessions. By analyzing the timestamps associated with each song play, we can discern various trends, such as peak listening times, variations in music genre preferences throughout the day, and how listening behavior changes at different hours of the day.</p>
+                <p>The endTime field in the Spotify streaming data, which records the timestamp for when a listening session ends, serves as the primary data point for temporal analysis. The first step involves converting these timestamp strings into a more manageable date-time format (POSIXct), which facilitates easier manipulation and analysis within R. Following the time conversion, an aggregation of total listening minutes per hour was executed, employing the dplyr package to group and summarize the data. This aggregation allowed us to construct a dataset representing the cumulative minutes of Spotify usage over each hour, consolidating listening sessions across the entire dataset.</p>
+                <p>The aggregated data was visualized using ggplot2, generating a line graph that depicts the listening patterns across the 24 hours of a day. The X-axis designates the hour of the day, while the Y-axis quantifies the total listening minutes. The resultant plot reveals the ebb and flow of music consumption, providing a clear visual representation of peak and off-peak listening periods.</p>
+                <p>The visual output from the temporal analysis presents a compelling narrative of daily music engagement. The line graph indicates a pronounced peak in listening activity during the evening hours, suggestive of a predilection for engaging with music towards the end of the day. Conversely, a noticeable decline in activity is observed during the late-night to early-morning hours, indicative of minimal engagement with Spotify during typical sleeping times.</p>
+                <p>This plot illustrates the user's music listening behavior over a 24-hour period. Peaks in listening activity can be observed during specific times of the day, indicating preferred listening times.</p>
+                <img src="./plots/litstening_patterns.png" alt="Temporal Analysis Plot" class="responsive-img">
+                <p><strong>Insight:</strong> Midday shows moderate listening levels, with some fluctuations that may correspond to lunch breaks or midday leisure activities. Morning hours display a sharp increase, possibly aligning with morning routines or commutes to work or school.</p>
+                <p>The analysis of temporal patterns provides an intimate glimpse into the user’s lifestyle and daily routine as it relates to music consumption. The evening peak suggests that the user may utilize music as a form of relaxation and unwinding after the day’s activities. The implications for streaming services like Spotify are manifold; understanding these patterns can inform the curation of time-specific playlists and the timing of new music releases to maximize engagement.</p>
             </div>
             <br>
             <br>
             <div class="algorithm">
                 <h3>Signed Network Analysis</h3>
-                <p>In our analysis, we utilized the concept of signed networks to understand better the na-
-                    ture of interactions within the artist transition network. Signed networks allow us to
-                    assign a positive or negative connotation to each edge based on certain criteria. For our
-                    project, we defined positive edges as instances where a song was played to near com-
-                    pletion (90 percent or more of its length), suggesting a positive reception. Conversely,
-                    negative edges were defined as instances where a song was played less than 10 percent
-                    of its total length, indicating disinterest or dislike. The data from Spotify includes de-
-                    tails about the tracks you’ve listened to, such as the artist’s name, the track name, the
-                    end time of the listening, and the duration of the play in milliseconds.</p>
-
-                <p>We begin by transforming the raw listening duration data into a meaningful inter-
-                    action sign. This involves classifying each listening event as a positive or negative
-                    interaction based on the percentage of the track’s total duration that was played.</p>
-                <img src="./plots/signed_network.png" alt="Signed Network Analysis Plot">
-                <p>We classified each listening event based on the play duration of the tracks. Events
-                    where a track was played for less than 10 percent of its duration were assigned a neg-
-                    ative sign, while those played for more than 90 percent received a positive sign. This
-                    classification reflects a listener’s approval or disapproval of a track.</p>
-
-                <p>The rationale behind using such thresholds (90 percent for positive and 10 percent
-                    for negative) is to delineate between different levels of listener engagement clearly and
-                    to minimize ambiguity in the interpretation of listener behavior. Songs that fall be-
-                    tween these two thresholds are not considered in the signed network, as their listener
-                    engagement is ambiguous—they are neither clearly liked nor disliked.</p>
-
-                <p>The incorporation of this sign-based approach allows us to dig deeper into the listen-
-                    ing habits and preferences, distinguishing between artists that are truly favored versus
-                    those that might frequently be skipped or played briefly. This nuanced analysis aids in
-                    a more precise community detection within the network.</p>
+                <p>In our analysis, we utilized the concept of signed networks to understand better the nature of interactions within the artist transition network. Signed networks allow us to assign a positive or negative connotation to each edge based on certain criteria. For our project, we defined positive edges as instances where a song was played to near completion (90 percent or more of its length), suggesting a positive reception. Conversely, negative edges were defined as instances where a song was played less than 10 percent of its total length, indicating disinterest or dislike. The data from Spotify includes details about the tracks you’ve listened to, such as the artist’s name, the track name, the end time of the listening, and the duration of the play in milliseconds.</p>
+                <p>We begin by transforming the raw listening duration data into a meaningful interaction sign. This involves classifying each listening event as a positive or negative interaction based on the percentage of the track’s total duration that was played.</p>
+                <img src="./plots/signed_network.png" alt="Signed Network Analysis Plot" class="responsive-img">
+                <p>We classified each listening event based on the play duration of the tracks. Events where a track was played for less than 10 percent of its duration were assigned a negative sign, while those played for more than 90 percent received a positive sign. This classification reflects a listener’s approval or disapproval of a track.</p>
+                <p>The rationale behind using such thresholds (90 percent for positive and 10 percent for negative) is to delineate between different levels of listener engagement clearly and to minimize ambiguity in the interpretation of listener behavior. Songs that fall between these two thresholds are not considered in the signed network, as their listener engagement is ambiguous—they are neither clearly liked nor disliked.</p>
+                <p>The incorporation of this sign-based approach allows us to dig deeper into the listening habits and preferences, distinguishing between artists that are truly favored versus those that might frequently be skipped or played briefly. This nuanced analysis aids in a more precise community detection within the network.</p>
             </div>
 
             <br>
@@ -297,38 +207,28 @@
 
             <div class="algorithm">
                 <h3>Interesting Results Based On My Streaming History</h3>
-                <p>Personal Spotify data visualization offers users an insightful and interactive representa-
-                    tion of their music listening habits and preferences. Users can explore various aspects
-                    of their Spotify usage, including favorite tracks, artists, genres, and listening patterns,
-                    through visually appealing charts, graphs, and diagrams. These visualizations provide a
-                    comprehensive overview of the user’s music journey, allowing them to identify trends,
-                    discover new music, and reflect on their musical tastes. With personalized visualiza-
-                    tions, users can engage with their Spotify data in a meaningful and enjoyable way,
-                    enhancing their overall music listening experience.</p>
-                
-                    <div class="plot-carousel">
-                        <button class="carousel-btn prev-btn" onclick="showPrevPlot()">&#10094;</button>
-                        <div class="plot-container">
-                            <img src="./results/hours-playback_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/hours_greater_than_3.png" alt="Plot 3" class="plot" >
-                            <img src="./results/hours_playback_artist_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/time_and_day.png" alt="Plot 3" class="plot" >
-                            <img src="./results/top10_artists_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/top10_tracks_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/weekday_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/weekday_time.png" alt="Plot 3" class="plot" >
-                            <img src="./results/weekday_weekend_s.png" alt="Plot 3" class="plot" >
-                            <img src="./results/what_time_of_day_s.png" alt="Plot 3" class="plot" >
-                        </div>
-                        <button class="carousel-btn next-btn" onclick="showNextPlot()">&#10095;</button>
+                <p>Personal Spotify data visualization offers users an insightful and interactive representation of their music listening habits and preferences. Users can explore various aspects of their Spotify usage, including favorite tracks, artists, genres, and listening patterns, through visually appealing charts, graphs, and diagrams. These visualizations provide a comprehensive overview of the user’s music journey, allowing them to identify trends, discover new music, and reflect on their musical tastes. With personalized visualizations, users can engage with their Spotify data in a meaningful and enjoyable way, enhancing their overall music listening experience.</p>
+                <div class="plot-carousel">
+                    <button class="carousel-btn prev-btn" onclick="showPrevPlot1()">&#10094;</button>
+                    <div class="plot-container">
+                        <img src="./results/hours-playback_s.png" alt="Hours Playback" class="plot">
+                        <img src="./results/hours_greater_than_3.png" alt="Hours Greater than 3" class="plot">
+                        <img src="./results/hours_playback_artist_s.png" alt="Hours Playback by Artist" class="plot">
+                        <img src="./results/time_and_day.png" alt="Time and Day" class="plot">
+                        <img src="./results/top10_artists_s.png" alt="Top 10 Artists" class="plot">
+                        <img src="./results/top10_tracks_s.png" alt="Top 10 Tracks" class="plot">
+                        <img src="./results/weekday_s.png" alt="Weekday" class="plot">
+                        <img src="./results/weekday_time.png" alt="Weekday Time" class="plot">
+                        <img src="./results/weekday_weekend_s.png" alt="Weekday vs Weekend" class="plot">
+                        <img src="./results/what_time_of_day_s.png" alt="What Time of Day" class="plot">
                     </div>
-
-                    <p>This project was created for the <strong>CPT_S 591 Elements of Network Science</strong> course at <strong>Washington State University</strong>, under the supervision of Professor <strong>Assefaw Gebremedhin</strong>.</p>
+                    <button class="carousel-btn next-btn" onclick="showNextPlot1()">&#10095;</button>
+                </div>
+                <p>This project was created for the <strong>CPT_S 591 Elements of Network Science</strong> course at <strong>Washington State University</strong>, under the supervision of Professor <strong>Assefaw Gebremedhin</strong>.</p>
             </div>
         </section>
     </main>
     <button id="theme-toggle" class="theme-toggle"><img src="theme.png" alt="Theme Toggle Icon"></button>
-
 
     <footer>
         <p>&copy; 2024 Simarjeet Singh.</p>
@@ -396,17 +296,18 @@
                 observer.observe(section);
             });
         });
-        document.addEventListener('DOMContentLoaded', () => {
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.body.classList.toggle('light-theme', currentTheme === 'light');
 
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
-            const newTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            document.body.classList.toggle('light-theme', currentTheme === 'light');
+
+            themeToggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                const newTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+            });
         });
-    });
     </script>
 </body>
 </html>
